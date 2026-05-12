@@ -1,0 +1,259 @@
+---
+const skillCategories = [
+  {
+    name: "Frontend",
+    skills: [
+      "React",
+      "Next.js",
+      "Astro",
+      "TypeScript",
+      "HTML/CSS",
+      "Tailwind CSS",
+      "SASS",
+    ],
+  },
+  {
+    name: "Backend",
+    skills: [
+      "Node.js",
+      "Python",
+      "Express",
+      "FastAPI",
+      "PostgreSQL",
+      "MySQL",
+      "GraphQL",
+    ],
+  },
+  {
+    name: "DevOps & Tools",
+    skills: ["Docker", "AWS", "Git", "CI/CD", "Linux", "Nginx", "Redis"],
+  },
+  {
+    name: "IA & Automation",
+    skills: [
+      "OpenCode",
+      "Cursor",
+      "IA Generativa",
+      "Automatización",
+      "Prompt Engineering",
+    ],
+  },
+];
+---
+
+<section id="skills" class="skills">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>Habilidades</h2>
+    </div>
+
+    <div class="skills-grid">
+      {
+        skillCategories.map((category, index) => (
+          <div
+            class="skill-category fade-in"
+            style={`animation-delay: ${index * 0.15}s`}
+          >
+            <div class="category-header">
+              <div class="category-icon">
+                {index === 0 && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                  </svg>
+                )}
+                {index === 1 && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                    <line x1="6" y1="6" x2="6.01" y2="6" />
+                    <line x1="6" y1="18" x2="6.01" y2="18" />
+                  </svg>
+                )}
+                {index === 2 && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                  </svg>
+                )}
+                {index === 3 && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9" />
+                    <path d="M20 3v4h-4" />
+                  </svg>
+                )}
+              </div>
+              <h3>{category.name}</h3>
+            </div>
+            <div class="skill-list">
+              {category.skills.map((skill) => (
+                <div class="skill-item">
+                  <span class="skill-name">{skill}</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 0%" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills {
+    background: var(--bg-secondary);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+
+  .skill-category {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    transition: all 0.3s ease;
+  }
+
+  .skill-category:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 30px var(--glow-color);
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .category-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(
+      135deg,
+      var(--accent-primary),
+      var(--accent-tertiary)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .category-header h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+  }
+
+  .skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .skill-name {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+  }
+
+  .skill-bar {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .skill-progress {
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      var(--accent-primary),
+      var(--accent-tertiary)
+    );
+    border-radius: 4px;
+    transition: width 1s ease;
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const bars = entry.target.querySelectorAll(".skill-progress");
+          bars.forEach((bar) => {
+            const width = Math.floor(Math.random() * 20) + 75;
+            (bar as HTMLElement).style.width = `${width}%`;
+          });
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  document.querySelectorAll(".skill-category").forEach((category) => {
+    observer.observe(category);
+  });
+</script>
