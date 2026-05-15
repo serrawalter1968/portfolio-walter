@@ -1,5 +1,14 @@
 ---
-const techStack = ['React', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'MySQL', 'AWS', 'Astro'];
+const techStack = [
+  "React",
+  "Node.js",
+  "TypeScript",
+  "Python",
+  "PostgreSQL",
+  "MySQL",
+  "AWS",
+  "Astro",
+];
 ---
 
 <section id="about" class="about">
@@ -19,19 +28,19 @@ const techStack = ['React', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'My
       <div class="about-text fade-in">
         <h3>Desarrollador Full Stack con pasión por la tecnología</h3>
         <p>
-          Soy un desarrollador con más de 5 años de experiencia creando aplicaciones web modernas y escalables.
-          Mi enfoque está en construir soluciones que no solo funcionan bien, sino que también proporcionan
+          Soy un desarrollador con más de 10 años de experiencia creando
+          aplicaciones web modernas y escalables. Mi enfoque está en construir
+          soluciones que no solo funcionan bien, sino que también proporcionan
           una experiencia de usuario excepcional.
         </p>
         <p>
-          Me especializo en el ecosistema JavaScript/TypeScript, tanto en frontend como en backend, pero siempre
-          estoy abierto a explorar nuevas tecnologías y paradigmas de desarrollo.
+          Me especializo en el ecosistema JavaScript/TypeScript, tanto en
+          frontend como en backend, pero siempre estoy abierto a explorar nuevas
+          tecnologías y paradigmas de desarrollo.
         </p>
 
         <div class="tech-tags">
-          {techStack.map(tech => (
-            <span class="tech-tag">{tech}</span>
-          ))}
+          {techStack.map((tech) => <span class="tech-tag">{tech}</span>)}
         </div>
 
         <a href="#contact" class="btn btn-primary">Conversemos</a>
@@ -86,8 +95,15 @@ const techStack = ['React', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'My
   }
 
   @keyframes glow {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.1); }
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.1);
+    }
   }
 
   .about-text h3 {
